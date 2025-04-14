@@ -21,6 +21,9 @@ public class Placer : MonoBehaviour
     public UnityEvent onUse;
     public Image image;
     public AudioSource placeSound;
+    public ContructionIcon bridge;
+    public ContructionIcon elevator;
+    public ContructionIcon door;
 
     private void Start()
     {
@@ -45,6 +48,7 @@ public class Placer : MonoBehaviour
                     onUse.Invoke();
                     image.enabled = false;
                     placeSound.Play();
+                    bridge.count--;
                     break;
                 case SelectedItem.Elevator:
                     Instantiate(elevatorPrefab, mousePos, Quaternion.identity);
@@ -52,6 +56,7 @@ public class Placer : MonoBehaviour
                     onUse.Invoke();
                     image.enabled = false;
                     placeSound.Play();
+                    elevator.count--;
                     break;
                 case SelectedItem.Door:
                     Instantiate(doorPrefab, mousePos, Quaternion.identity);
@@ -59,6 +64,7 @@ public class Placer : MonoBehaviour
                     onUse.Invoke();
                     image.enabled = false;
                     placeSound.Play();
+                    door.count--;
                     break;
             }
         }

@@ -184,6 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 8321672604741745649}
   sprite: {fileID: 21300000, guid: 5b48f10fc8dec0347b4c516be1d6c504, type: 3}
+  count: 0
+  text: {fileID: 780430230814199628}
 --- !u!1 &1854263799955769867
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 8321672604741745649}
   sprite: {fileID: 21300000, guid: 26c495c409acbfa4e8c6398254f0706f, type: 3}
+  count: 0
+  text: {fileID: 787401753564682456}
 --- !u!1 &2747519951366840775
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,6 +781,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 8321672604741745649}
   sprite: {fileID: 21300000, guid: 12c3356212a31dc45a9d070d3090ae21, type: 3}
+  count: 0
+  text: {fileID: 704299743954389748}
 --- !u!1 &6348173194790700255
 GameObject:
   m_ObjectHideFlags: 0
