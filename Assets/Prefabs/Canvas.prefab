@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 8321672604741745649}
   sprite: {fileID: 21300000, guid: 26c495c409acbfa4e8c6398254f0706f, type: 3}
-  count: 0
+  count: 2
   text: {fileID: 787401753564682456}
 --- !u!1 &2747519951366840775
 GameObject:
@@ -1083,6 +1083,12 @@ MonoBehaviour:
         m_CallState: 2
   image: {fileID: 8321672604741745649}
   placeSound: {fileID: 122421449945693706}
+  bridge: {fileID: 6609611376571406807}
+  elevator: {fileID: 6256641147541899138}
+  door: {fileID: 9020167524940313858}
+  construction:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!82 &122421449945693706
 AudioSource:
   m_ObjectHideFlags: 0

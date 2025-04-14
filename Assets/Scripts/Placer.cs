@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class Placer : MonoBehaviour
     public ContructionIcon bridge;
     public ContructionIcon elevator;
     public ContructionIcon door;
+    public LayerMask construction;
 
     private void Start()
     {
@@ -33,12 +35,11 @@ public class Placer : MonoBehaviour
 
     private void Update()
     {
+        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
         if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
         {
-
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
-            Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0f;
             switch (selectedItem)
             {
@@ -66,6 +67,14 @@ public class Placer : MonoBehaviour
                     placeSound.Play();
                     door.count--;
                     break;
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity, construction))
+            {
+                Destroy(hit.collider.gameObject);
             }
         }
     }
