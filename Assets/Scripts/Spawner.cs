@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject lemming;
     public int count = 5;
     public float timeout = 3;
-    int times = 0; 
+    public int times = 0; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
