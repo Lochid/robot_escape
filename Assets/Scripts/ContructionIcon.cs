@@ -21,6 +21,9 @@ public class ContructionIcon : MonoBehaviour
         if (count <= 0)
         {
             button.interactable = false;
+        } else
+        {
+            button.interactable = true;
         }
     }
     public void Choise()

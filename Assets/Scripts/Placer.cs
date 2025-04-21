@@ -81,7 +81,23 @@ public class Placer : MonoBehaviour
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, float.PositiveInfinity, construction))
             {
-                Destroy(hit.collider.gameObject);
+                var constr = hit.collider.gameObject.GetComponent<Construction>();
+                if (constr != null)
+                {
+                    switch (constr.itemType)
+                    {
+                        case SelectedItem.Bridge:
+                            bridge.count++;
+                            break;
+                        case SelectedItem.Elevator:
+                            elevator.count++;
+                            break;
+                        case SelectedItem.Door:
+                            door.count++;
+                            break;
+                    }
+                    Destroy(hit.collider.gameObject);
+                }
             }
         }
     }
