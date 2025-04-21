@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CameraController : MonoBehaviour
+public class PerspectiveCameraController : MonoBehaviour
 {
     [Header("Параметры перемещения")]
-    public float moveSpeed = 10f;
-    public float dragSpeed = 0.5f;
+    public float moveSpeed = 0.5f;  // скорость перемещения при драге
 
     [Header("Параметры зума")]
-    public float zoomSpeed = 5f;
-    public float minZoom = 5f;
-    public float maxZoom = 20f;
+    public float zoomSpeed = 10f;   // скорость изменения поля зрения
+    public float minFov = 20f;
+    public float maxFov = 60f;
 
     private Vector3 dragOrigin;
-
     private Camera cam;
 
     private void Start()
@@ -32,8 +30,8 @@ public class CameraController : MonoBehaviour
         float scroll = Mouse.current.scroll.ReadValue().y;
         if (scroll != 0f)
         {
-            float newSize = cam.orthographicSize - scroll * zoomSpeed;
-            cam.orthographicSize = Mathf.Clamp(newSize, minZoom, maxZoom);
+            float newFov = cam.fieldOfView - scroll * zoomSpeed * Time.deltaTime;
+            cam.fieldOfView = Mathf.Clamp(newFov, minFov, maxFov);
         }
     }
 
@@ -41,14 +39,19 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(2)) // Средняя кнопка мыши
         {
-            dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
+            dragOrigin = Input.mousePosition;
         }
 
         if (Input.GetMouseButton(2))
         {
-            Vector3 currentPos = cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 diff = dragOrigin - currentPos;
-            transform.position += diff;
+            Vector3 currentPos = Input.mousePosition;
+            Vector3 difference = dragOrigin - currentPos;
+
+            // перемещаем камеру вдоль локальных осей
+            Vector3 move = new Vector3(difference.x, difference.y, 0f) * moveSpeed * Time.deltaTime;
+            transform.Translate(move, Space.Self);
+
+            dragOrigin = currentPos;
         }
     }
 }

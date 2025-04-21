@@ -3931,7 +3931,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -4020,10 +4020,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  dragSpeed: 0.5
-  zoomSpeed: 5
-  minZoom: 5
-  maxZoom: 37
+  zoomSpeed: 500
+  minFov: 20
+  maxFov: 90
 --- !u!1001 &1518549180
 PrefabInstance:
   m_ObjectHideFlags: 0
