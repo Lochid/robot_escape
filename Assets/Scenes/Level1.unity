@@ -2543,12 +2543,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6048703767194528563, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1489541128}
+    - target: {fileID: 6256641147541899138, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256641147541899138, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1489541128}
     - target: {fileID: 6537116621196444752, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6609611376571406807, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609611376571406807, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: marker
+      value: 
+      objectReference: {fileID: 94374242247283606, guid: 0b0eb372d1f77f4498f176850380105e, type: 3}
+    - target: {fileID: 6609611376571406807, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1489541128}
+    - target: {fileID: 9020167524940313858, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020167524940313858, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1489541128}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1854263799955769867, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
@@ -3930,7 +3963,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3957,7 +3990,7 @@ Transform:
   m_GameObject: {fileID: 1489541123}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -7.902174, y: 5.91, z: 18.35}
+  m_LocalPosition: {x: -8.98, y: 4.38, z: 18.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4020,9 +4053,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  minBounds: {x: -28, y: -4.17}
+  maxBounds: {x: -3, y: 10.4}
   zoomSpeed: 500
-  minFov: 20
-  maxFov: 90
+  minFov: 25
+  maxFov: 74
+  deletableMask:
+    serializedVersion: 2
+    m_Bits: 0
+  highlightMaterial: {fileID: 0}
+  fixedDistanceFromCamera: 18.35
 --- !u!1001 &1518549180
 PrefabInstance:
   m_ObjectHideFlags: 0

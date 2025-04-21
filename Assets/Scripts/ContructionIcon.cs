@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class ContructionIcon : MonoBehaviour
 {
     Button button;
-    public Image image;
-    public Sprite sprite;
+    public PerspectiveCameraController perspectiveCameraController;
+    public GameObject marker;
     public int count = 0;
     public TMP_Text text;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,8 +26,7 @@ public class ContructionIcon : MonoBehaviour
     public void Choise()
     {
         button.interactable = false;
-        image.enabled = (true);
-        image.sprite = sprite;
+        perspectiveCameraController.SetMarker(marker);
     }
     public void UnChoise()
     {

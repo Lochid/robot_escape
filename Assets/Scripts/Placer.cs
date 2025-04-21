@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public enum SelectedItem
@@ -20,12 +21,13 @@ public class Placer : MonoBehaviour
     public Camera mainCamera;
     SelectedItem selectedItem = SelectedItem.None;
     public UnityEvent onUse;
-    public Image image;
     public AudioSource placeSound;
     public ContructionIcon bridge;
     public ContructionIcon elevator;
     public ContructionIcon door;
     public LayerMask construction;
+    public PerspectiveCameraController perspectiveCameraController;
+    [SerializeField] private float fixedDistanceFromCamera = 18.35f;
 
     private void Start()
     {
@@ -35,35 +37,40 @@ public class Placer : MonoBehaviour
 
     private void Update()
     {
-        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector3 mousePos2 = Mouse.current.position.ReadValue();
+        mousePos2.z = fixedDistanceFromCamera; // нужно только расстояние от камеры для корректного преобразования
+
+        Vector3 worldPos = mainCamera.ScreenToWorldPoint(mousePos2);
+
+
         if (EventSystem.current.IsPointerOverGameObject())
             return;
         if (Input.GetMouseButtonDown(0)) // Левая кнопка мыши
         {
-            mousePos.z = 0f;
             switch (selectedItem)
             {
                 case SelectedItem.Bridge:
-                    Instantiate(bridgePrefab, mousePos, Quaternion.identity);
+                    Instantiate(bridgePrefab, worldPos, Quaternion.identity);
                     selectedItem = SelectedItem.None;
                     onUse.Invoke();
-                    image.enabled = false;
+                    perspectiveCameraController.AvoidMarker();
                     placeSound.Play();
                     bridge.count--;
                     break;
                 case SelectedItem.Elevator:
-                    Instantiate(elevatorPrefab, mousePos, Quaternion.identity);
+                    Instantiate(elevatorPrefab, worldPos, Quaternion.identity);
                     selectedItem = SelectedItem.None;
                     onUse.Invoke();
-                    image.enabled = false;
+                    perspectiveCameraController.AvoidMarker();
                     placeSound.Play();
                     elevator.count--;
                     break;
                 case SelectedItem.Door:
-                    Instantiate(doorPrefab, mousePos, Quaternion.identity);
+                    Instantiate(doorPrefab, worldPos, Quaternion.identity);
                     selectedItem = SelectedItem.None;
                     onUse.Invoke();
-                    image.enabled = false;
+                    perspectiveCameraController.AvoidMarker();
                     placeSound.Play();
                     door.count--;
                     break;

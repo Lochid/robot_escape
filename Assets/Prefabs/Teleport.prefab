@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2354314332277376931}
   - component: {fileID: 3311421542549606386}
   m_Layer: 7
-  m_Name: Cube (3)
+  m_Name: Teleport
   m_TagString: DangerZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
