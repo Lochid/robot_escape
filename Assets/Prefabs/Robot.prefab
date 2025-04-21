@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1228546243675726784}
-  speed: 5
+  speed: 2
   rayLength: 1
   deathSpeed: 8
   wallLayer:
@@ -108,6 +108,9 @@ MonoBehaviour:
   dangerLayer:
     serializedVersion: 2
     m_Bits: 64
+  saveLayer:
+    serializedVersion: 2
+    m_Bits: 256
   teleportLayer:
     serializedVersion: 2
     m_Bits: 128

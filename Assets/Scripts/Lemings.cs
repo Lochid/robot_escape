@@ -14,6 +14,7 @@ public class Lemings : MonoBehaviour
     bool dead = false;
     public LayerMask wallLayer;
     public LayerMask dangerLayer;
+    public LayerMask saveLayer;
     public LayerMask teleportLayer;
     public AudioSource deathSound;
 
@@ -83,6 +84,11 @@ public class Lemings : MonoBehaviour
         StartCoroutine(FinalDeath());
     }
 
+    void Save()
+    {
+        Destroy(gameObject);
+    }
+
     IEnumerator FinalDeath()
     {
         yield return new WaitForSeconds(2f);
@@ -95,6 +101,10 @@ public class Lemings : MonoBehaviour
         if ((dangerLayer.value & (1 << other.transform.gameObject.layer)) > 0)
         {
             Death();
+        }
+        if ((saveLayer.value & (1 << other.transform.gameObject.layer)) > 0)
+        {
+            Save();
         }
         if ((teleportLayer.value & (1 << other.transform.gameObject.layer)) > 0)
         {
