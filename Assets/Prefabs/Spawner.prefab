@@ -45,5 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lemming: {fileID: 8690883575346739695, guid: 8e682900e6de2894f9a12892b3eeef85, type: 3}
-  count: 5
+  count: 10
   timeout: 2.66
+  times: 0
