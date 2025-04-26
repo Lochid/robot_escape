@@ -4647,10 +4647,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6048703767194528563, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1592299484}
+    - target: {fileID: 6048703767194528563, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1592299481}
+    - target: {fileID: 6256641147541899138, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1592299481}
     - target: {fileID: 6537116621196444752, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6609611376571406807, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609611376571406807, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1592299481}
+    - target: {fileID: 9020167524940313858, guid: b7eb974c53861864991cc34fd530ae14, type: 3}
+      propertyPath: perspectiveCameraController
+      value: 
+      objectReference: {fileID: 1592299481}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7073,6 +7097,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1592299481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 504652456101543570, guid: d966199f8224e6143a4e940670178de1, type: 3}
+  m_PrefabInstance: {fileID: 808290036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5b273c2d253f3f4e95c6e0f0f51587a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!20 &1592299484 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 811159259126575661, guid: d966199f8224e6143a4e940670178de1, type: 3}
+  m_PrefabInstance: {fileID: 808290036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1617653233
 PrefabInstance:
   m_ObjectHideFlags: 0
